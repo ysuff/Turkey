@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/denemeiki"
+        tools:context=".view.singup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/loginText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Kayıt Ol"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="italic" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singupEmailLayoutText"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-posta"
+            android:textColorHint="@color/white"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_mail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singupEmailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singupPasswordLayoutText"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Parola"
+            android:textColorHint="@color/white"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/ic_fingerprint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singupPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColorHint="@color/white">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singupPasswordControlLayoutText"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Parola Dogrula"
+            android:textColorHint="@color/white"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/ic_fingerprint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singupPasswordControlEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColorHint="@color/white">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/singupSingupButton"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/white"
+            android:elevation="1dp"
+            android:onClick="loginButtonClick"
+            android:text="Kayit Ol"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="italic" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/singupOrText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="YA DA"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/singupGoBackToLoginButton"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/blue"
+            android:elevation="1dp"
+            android:text="Giris Ekranina Don"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
