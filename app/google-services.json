@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "615272878967",
+    "project_id": "turkey-48305",
+    "storage_bucket": "turkey-48305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615272878967:android:20ce5c38675ed1d4610772",
+        "android_client_info": {
+          "package_name": "com.example.turkey"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD64SPbVw6UjmkJsBhVIIpfW6rsC98eOJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
