@@ -1,4 +1,4 @@
-package com.example.turkey.view
+package com.example.turkey.views
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -52,7 +52,6 @@ class singup : Fragment() {
         singupGoBackToLoginButton.setOnClickListener {
             val goLoginPage = singupDirections.actionSingupToLogin()
             Navigation.findNavController(it).navigate(goLoginPage)
-
         }
 
         singupInit(view)
@@ -75,16 +74,16 @@ class singup : Fragment() {
             if (singupEmail.isNotEmpty() && singupPassword.isNotEmpty() && singupControlPassowrd.isNotEmpty()) {
                 if (singupPassword == singupControlPassowrd) {
                     singupAuth.createUserWithEmailAndPassword(singupEmail, singupPassword).addOnCompleteListener(
-                            OnCompleteListener {
-                                if (it.isSuccessful) {
-                                    Toast.makeText(context,"Kayıt Başarıyla Oluşturuldu",Toast.LENGTH_SHORT).show()
-                                    singupNavController.navigate(R.id.action_singup_to_city)
-                                } else {
-                                    Toast.makeText(
-                                        context,it.exception?.message,Toast.LENGTH_SHORT).show()
-                                }
+                        OnCompleteListener {
+                            if (it.isSuccessful) {
+                                Toast.makeText(context,"Kayıt Başarıyla Oluşturuldu",Toast.LENGTH_SHORT).show()
+                                singupNavController.navigate(R.id.action_singup_to_city)
+                            } else {
+                                Toast.makeText(
+                                    context,it.exception?.message,Toast.LENGTH_SHORT).show()
                             }
-                        )
+                        }
+                    )
 
                 }
 

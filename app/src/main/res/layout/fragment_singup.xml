@@ -5,10 +5,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/denemeiki"
-        tools:context=".view.singup">
+    android:background="@drawable/singup_background"
+    tools:context=".views.singup">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/singupGoBackToLoginButton"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_arrow_back"
+        app:iconTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.button.MaterialButton>
+
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -38,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="E-posta"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             app:endIconMode="clear_text"
             app:startIconDrawable="@drawable/ic_mail">
 
@@ -46,6 +60,7 @@
                 android:id="@+id/singupEmailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/textbox_back"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,16 +70,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Parola"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             app:endIconMode="password_toggle"
             app:startIconDrawable="@drawable/ic_fingerprint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/singupPasswordEditText"
                 android:layout_width="match_parent"
+                android:background="@drawable/textbox_back"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:textColorHint="@color/white">
+                android:textColorHint="@color/black">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,13 +91,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Parola Dogrula"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             app:endIconMode="password_toggle"
             app:startIconDrawable="@drawable/ic_fingerprint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/singupPasswordControlEditText"
                 android:layout_width="match_parent"
+                android:background="@drawable/textbox_back"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:textColorHint="@color/white">
@@ -104,29 +121,6 @@
             android:textColor="@color/black"
             android:textStyle="italic" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/singupOrText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:text="YA DA"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="italic" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/singupGoBackToLoginButton"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:backgroundTint="@color/blue"
-            android:elevation="1dp"
-            android:text="Giris Ekranina Don"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textStyle="italic" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
