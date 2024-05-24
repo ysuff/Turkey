@@ -77,7 +77,7 @@ class singup : Fragment() {
                         OnCompleteListener {
                             if (it.isSuccessful) {
                                 Toast.makeText(context,"Kayıt Başarıyla Oluşturuldu",Toast.LENGTH_SHORT).show()
-                                singupNavController.navigate(R.id.action_singup_to_city)
+                                singupNavController.navigate(R.id.action_home_to_city)
                             } else {
                                 Toast.makeText(
                                     context,it.exception?.message,Toast.LENGTH_SHORT).show()

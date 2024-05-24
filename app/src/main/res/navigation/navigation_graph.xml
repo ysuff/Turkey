@@ -14,11 +14,8 @@
             android:id="@+id/action_login_to_singup"
             app:destination="@id/singup" />
         <action
-            android:id="@+id/action_login_to_city"
-            app:destination="@id/city" />
-        <action
-            android:id="@+id/action_login_to_cityName"
-            app:destination="@id/cityName" />
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/singup"
@@ -29,11 +26,8 @@
             android:id="@+id/action_singup_to_login"
             app:destination="@id/login" />
         <action
-            android:id="@+id/action_singup_to_city"
-            app:destination="@id/city" />
-        <action
-            android:id="@+id/action_singup_to_cityName"
-            app:destination="@id/cityName" />
+            android:id="@+id/action_singup_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/city"
@@ -59,8 +53,47 @@
             app:destination="@id/cityName" />
     </fragment>
     <fragment
-        android:id="@+id/mapsFragment"
-        android:name="com.example.turkey.views.MapsFragment"
-        android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" />
+        android:id="@+id/home"
+        android:name="com.example.turkey.views.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_cityName"
+            app:destination="@id/cityName" />
+        <action
+            android:id="@+id/action_home_to_city"
+            app:destination="@id/city" />
+        <action
+            android:id="@+id/action_home_to_mainActivityTwo"
+            app:destination="@id/mainActivityTwo" />
+        <action
+            android:id="@+id/action_home_to_wantCity"
+            app:destination="@id/wantCity" />
+        <action
+            android:id="@+id/action_home_to_visitedCity"
+            app:destination="@id/visitedCity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivityTwo"
+        android:name="com.example.turkey.MainActivityTwo"
+        android:label="activity_main_two"
+        tools:layout="@layout/activity_main_two" />
+    <fragment
+        android:id="@+id/wantCity"
+        android:name="com.example.turkey.views.WantCity"
+        android:label="fragment_want_city"
+        tools:layout="@layout/fragment_want_city" >
+        <action
+            android:id="@+id/action_wantCity_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/visitedCity"
+        android:name="com.example.turkey.views.VisitedCity"
+        android:label="fragment_visited_city"
+        tools:layout="@layout/fragment_visited_city" >
+        <action
+            android:id="@+id/action_visitedCity_to_home"
+            app:destination="@id/home" />
+    </fragment>
 </navigation>

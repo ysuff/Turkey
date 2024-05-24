@@ -91,7 +91,7 @@ class login : Fragment() {
                                     editor.putBoolean("isChecked", false)
                                     editor.apply()
                                 }
-                                loginNavController.navigate(R.id.action_login_to_cityName)
+                                loginNavController.navigate(R.id.action_login_to_home)
                             } else {
                                 Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT)
                                     .show()

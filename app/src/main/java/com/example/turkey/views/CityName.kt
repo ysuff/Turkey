@@ -1,10 +1,10 @@
 package com.example.turkey.views
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +15,8 @@ import com.example.turkey.views.adapters.CityRawAdapter
 class CityName : Fragment() {
     private lateinit var binding: FragmentCityNameBinding
     private lateinit var recyclerView: RecyclerView
+    private lateinit var searchViewCities: SearchView
+    private lateinit var adapter: CityRawAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,43 +25,54 @@ class CityName : Fragment() {
         binding = FragmentCityNameBinding.inflate(inflater, container, false)
 
         recyclerView = binding.cityNameRecyclerView
+        searchViewCities = binding.searchViewCities
+
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val getCityImage = getCityImage()
         val cityName = getCityNames()
-        val cityVisit=getCityVisit()
-        val cityFood=getCityFood()
+        val cityVisit = getCityVisit()
+        val cityFood = getCityFood()
 
-
-        val adapter = CityRawAdapter(cityName, getCityImage,cityVisit,cityFood)
+        adapter = CityRawAdapter(cityName, getCityImage, cityVisit, cityFood)
         recyclerView.adapter = adapter
 
-
-
-
-
+        setupSearchView()
 
         return binding.root
     }
 
-    private fun getCityImage(): ArrayList<Int> {
-        val adana = R.drawable.adana
-        val adiyaman = R.drawable.adiyaman
-        val afyonkarahisar = R.drawable.afyonkarahisar
-        val agri = R.drawable.agri
-        val amasya = R.drawable.amasya
-        val ankara = R.drawable.ankara
+    private fun setupSearchView() {
+        searchViewCities.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
 
-
-        val cityImageList = ArrayList<Int>()
-        cityImageList.add(adana)
-        cityImageList.add(adiyaman)
-        cityImageList.add(afyonkarahisar)
-        cityImageList.add(agri)
-        cityImageList.add(amasya)
-        cityImageList.add(ankara)
-        return cityImageList
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter(newText.orEmpty())
+                return true
+            }
+        })
     }
+
+        private fun getCityImage(): ArrayList<Int> {
+            val adana = R.drawable.adana
+            val adiyaman = R.drawable.adiyaman
+            val afyonkarahisar = R.drawable.afyonkarahisar
+            val agri = R.drawable.agri
+            val amasya = R.drawable.amasya
+            val ankara = R.drawable.ankara
+
+
+            val cityImageList = ArrayList<Int>()
+            cityImageList.add(adana)
+            cityImageList.add(adiyaman)
+            cityImageList.add(afyonkarahisar)
+            cityImageList.add(agri)
+            cityImageList.add(amasya)
+            cityImageList.add(ankara)
+            return cityImageList
+        }
 
     private fun getCityNames(): ArrayList<String> {
         val sehirAdlari = ArrayList<String>()

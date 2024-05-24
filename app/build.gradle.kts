@@ -53,13 +53,14 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 19
+        minSdk = 21
     }
 }
 dependencies {
     implementation("androidx.activity:activity:1.8.0")
     implementation("com.google.firebase:firebase-database-ktx:20.3.1")
     implementation(libs.play.services.maps)
+    implementation(libs.firebase.database)
     val nav_version = "2.7.7"
     val room_version = "2.6.1"
     val lifecycle_version = "2.7.0"
@@ -108,6 +109,11 @@ dependencies {
     implementation("com.makeramen:roundedimageview:2.3.0")
 
     implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.maps:google-maps-services:0.2.4")
+
+    implementation ("com.google.android.libraries.places:places:2.5.0")
+    implementation ("com.google.android.gms:play-services-maps:18.0.2")
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
 
 
 }

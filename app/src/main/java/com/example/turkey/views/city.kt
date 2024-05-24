@@ -69,7 +69,6 @@ class city : Fragment() {
                         cityDataSet.addAll(searchResults.map {
                             CityCustomAdapterType(cityNameTitle = it.cityName)
                         })
-                        println(response.body())
                         cityRecyclerView.adapter?.notifyDataSetChanged()
                     }
                 }
