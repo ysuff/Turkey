@@ -28,10 +28,7 @@ private lateinit var singupPasswordControlEditText: EditText
 class singup : Fragment() {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

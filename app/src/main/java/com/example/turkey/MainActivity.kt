@@ -25,18 +25,5 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val navController = findNavController(R.id.fragmentContainerView2)
-        binding.bottomNavigationBar.setupWithNavController(navController)
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.login, R.id.singup,R.id.mainActivityTwo, R.id.cityDetail -> {
-                    binding.bottomNavigationBar.visibility = View.GONE
-                }
-                else -> {
-                    binding.bottomNavigationBar.visibility = View.VISIBLE
-                }
-            }
-        }
     }
 }

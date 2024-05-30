@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.viewpager2.widget.ViewPager2
 import com.example.turkey.R
 import com.example.turkey.databinding.FragmentHomeBinding
@@ -13,18 +14,18 @@ import com.example.turkey.views.adapters.PhotoSliderAdapter
 
 class Home : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentHomeBinding
 
     private lateinit var buttonNext: Button
     private lateinit var buttonBack: Button
+    private lateinit var buttonChat: Button
     private lateinit var viewPager: ViewPager2
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,13 +34,26 @@ class Home : Fragment() {
 
         buttonNext = binding.buttonNext
         buttonBack = binding.buttonBack
+        buttonChat = binding.buttonChat
         viewPager = binding.viewPager
 
+
+        buttonChat.setOnClickListener {
+            val action=HomeDirections.actionHomeToChatBot()
+            Navigation.findNavController(it).navigate(action)
+
+        }
+
+
         val images = listOf(
-            R.drawable.adana,
             R.drawable.ankara,
-            R.drawable.adiyaman,
-            R.drawable.afyonkarahisar
+            R.drawable.home_one,
+            R.drawable.home_two,
+            R.drawable.home_three,
+            R.drawable.home_four,
+            R.drawable.home_five,
+            R.drawable.home_six,
+
         )
 
         val adapter = PhotoSliderAdapter(images)
@@ -56,8 +70,8 @@ class Home : Fragment() {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
+
+
+
+

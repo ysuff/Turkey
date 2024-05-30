@@ -1,10 +1,9 @@
 package com.example.turkey.DataBase
 
-import com.example.turkey.DataBase.CityDao
 import androidx.lifecycle.LiveData
-import com.example.turkey.DataBase.CityEntity
 
 class CityRepository(private val cityDao: CityDao) {
+
     val readAllData: LiveData<List<CityEntity>> = cityDao.readAllData()
 
     suspend fun addCity(cityEntity: CityEntity) {
@@ -17,6 +16,10 @@ class CityRepository(private val cityDao: CityDao) {
 
     suspend fun deleteCity(city: CityEntity) {
         cityDao.deleteCity(city)
+    }
+
+    suspend fun deleteCityByName(cityName: String) {
+        cityDao.deleteCityByName(cityName)
     }
 
     suspend fun deleteAllCities() {

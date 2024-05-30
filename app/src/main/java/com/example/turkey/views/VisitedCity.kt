@@ -54,7 +54,6 @@ class VisitedCity : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle database error
             }
         })
     }

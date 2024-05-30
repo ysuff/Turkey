@@ -20,9 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:icon="@drawable/ic_arrow_back"
         app:iconTint="@color/black" />
 
@@ -31,51 +30,64 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="10dp"
-        android:queryHint="Search location" />
-
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FFFF"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search location"
+        android:submitBackground="@color/white" />
 
     <LinearLayout
         android:id="@+id/zoom_controls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_margin="16dp"
         android:orientation="vertical">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnZoomIn"
+            style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"/>
+            android:layout_marginBottom="8dp"
+            android:text="+"
+            app:backgroundTint="#FFFF"
+            app:iconTint="@color/blue" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnZoomOut"
+            style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"/>
-
+            android:text="-"
+            app:backgroundTint="#FFFF"
+            app:iconTint="@color/white" />
     </LinearLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnMyLocation"
+        style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:layout_margin="16dp"
-        android:text="My Location"/>
-    <Button
+        android:text="My Location"
+        app:backgroundTint="#FFFF"
+        app:iconTint="@color/white" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCancelSelection"
+        style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="İptal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-        android:visibility="gone"    />
+        android:text="İptal"
+        android:visibility="gone" />
 
 </RelativeLayout>

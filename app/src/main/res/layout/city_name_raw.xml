@@ -15,11 +15,20 @@
         android:layout_height="wrap_content"
         android:text="ŞEHİRLER"
         android:gravity="center"
+        android:layout_gravity="center"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="25sp"
+        android:textStyle="normal"
+        android:textSize="20sp"
         android:padding="2dp"
         />
+
+    <Button
+        style="@style/Widget.Material3.Button.IconButton"
+        app:icon="@drawable/ic_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        app:iconTint="@color/black" />
 
 
 </androidx.cardview.widget.CardView>

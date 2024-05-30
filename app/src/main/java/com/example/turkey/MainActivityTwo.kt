@@ -28,6 +28,8 @@ import com.google.android.libraries.places.api.net.PlacesClient
 import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
+import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest
+import com.google.android.libraries.places.api.net.FetchPlaceRequest
 import com.google.maps.DirectionsApi
 import com.google.maps.GeoApiContext
 import com.google.maps.model.DirectionsResult
@@ -112,7 +114,6 @@ class MainActivityTwo : AppCompatActivity(), OnMapReadyCallback {
             finish()
         }
 
-
         binding.searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query?.let { searchPlace(it) }
@@ -168,9 +169,37 @@ class MainActivityTwo : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun searchPlace(query: String) {
-        val fields = listOf(Field.ID, Field.NAME, Field.LAT_LNG)
-        val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields).build(this)
-        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
+        val request = FindAutocompletePredictionsRequest.builder()
+            .setQuery(query)
+            .build()
+
+        placesClient.findAutocompletePredictions(request)
+            .addOnSuccessListener { response ->
+                val predictions = response.autocompletePredictions
+                if (predictions.isNotEmpty()) {
+                    val prediction = predictions[0]
+                    val placeId = prediction.placeId
+
+                    val placeFields = listOf(Field.ID, Field.NAME, Field.LAT_LNG)
+                    val fetchPlaceRequest = FetchPlaceRequest.builder(placeId, placeFields).build()
+
+                    placesClient.fetchPlace(fetchPlaceRequest).addOnSuccessListener { fetchPlaceResponse ->
+                        val place = fetchPlaceResponse.place
+                        val latLng = place.latLng
+                        if (latLng != null) {
+                            mGoogleMap?.addMarker(MarkerOptions().position(latLng).title(place.name))
+                            mGoogleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10f))
+                        }
+                    }.addOnFailureListener { exception ->
+                        Toast.makeText(this, "Place not found: ${exception.message}", Toast.LENGTH_LONG).show()
+                    }
+                } else {
+                    Toast.makeText(this, "No predictions found", Toast.LENGTH_LONG).show()
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Prediction fetching failed: ${exception.message}", Toast.LENGTH_LONG).show()
+            }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -190,9 +219,7 @@ class MainActivityTwo : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-
-
-         private fun openGoogleMapsDirections(origin: LatLng, destination: LatLng) {
+    private fun openGoogleMapsDirections(origin: LatLng, destination: LatLng) {
         val gmmIntentUri = Uri.parse("https://www.google.com/maps/dir/?api=1&origin=${origin.latitude},${origin.longitude}&destination=${destination.latitude},${destination.longitude}&travelmode=driving")
         val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
         mapIntent.setPackage("com.google.android.apps.maps")

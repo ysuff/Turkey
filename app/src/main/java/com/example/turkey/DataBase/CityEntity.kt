@@ -1,3 +1,4 @@
+
 package com.example.turkey.DataBase
 
 import androidx.room.Entity

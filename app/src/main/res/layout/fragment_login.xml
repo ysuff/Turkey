@@ -29,7 +29,8 @@
             android:text="Hos Geldiniz"
             android:textColor="@color/white"
             android:textSize="35sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/loginMailLayoutText"

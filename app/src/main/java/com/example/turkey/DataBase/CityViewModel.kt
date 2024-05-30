@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+
 class CityViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: CityRepository
     val readAllData: LiveData<List<CityEntity>>
@@ -29,6 +30,12 @@ class CityViewModel(application: Application) : AndroidViewModel(application) {
     fun deleteCity(city: CityEntity) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteCity(city)
+        }
+    }
+
+    fun deleteCityByName(cityName: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteCityByName(cityName)
         }
     }
 

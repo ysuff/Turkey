@@ -71,6 +71,7 @@
             android:layout_height="wrap_content"
             android:hint="Parola"
             android:textColorHint="@color/black"
+            android:layout_marginTop="10dp"
             app:endIconMode="password_toggle"
             app:startIconDrawable="@drawable/ic_fingerprint">
 
@@ -78,6 +79,7 @@
                 android:id="@+id/singupPasswordEditText"
                 android:layout_width="match_parent"
                 android:background="@drawable/textbox_back"
+                android:layout_marginBottom="10dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:textColorHint="@color/black">
@@ -112,7 +114,7 @@
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:backgroundTint="@color/white"
             android:elevation="1dp"
             android:onClick="loginButtonClick"

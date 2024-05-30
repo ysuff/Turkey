@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/cityDetail"
+        android:name="com.example.turkey.views.CityDetail"
+        android:label="fragment_city_detail"
+        tools:layout="@layout/fragment_city_detail" />
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.turkey.views.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_wantCity"
+            app:destination="@id/wantCity" />
+        <action
+            android:id="@+id/action_home_to_cityName"
+            app:destination="@id/cityName" />
+        <action
+            android:id="@+id/action_home_to_city"
+            app:destination="@id/city" />
+        <action
+            android:id="@+id/action_home_to_visitedCity"
+            app:destination="@id/visitedCity" />
+        <action
+            android:id="@+id/action_home_to_mainActivityTwo"
+            app:destination="@id/mainActivityTwo" />
+        <action
+            android:id="@+id/action_home_to_chatBot"
+            app:destination="@id/chatBot" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivityTwo"
+        android:name="com.example.turkey.MainActivityTwo"
+        android:label="activity_main_two"
+        tools:layout="@layout/activity_main_two" />
+    <fragment
+        android:id="@+id/city"
+        android:name="com.example.turkey.views.city"
+        android:label="fragment_city"
+        tools:layout="@layout/fragment_city" />
+    <fragment
+        android:id="@+id/cityName"
+        android:name="com.example.turkey.views.CityName"
+        android:label="fragment_city_name"
+        tools:layout="@layout/fragment_city_name" >
+        <action
+            android:id="@+id/action_cityName_to_cityDetail"
+            app:destination="@id/cityDetail" />
+        <action
+            android:id="@+id/action_cityName_to_visitedCity"
+            app:destination="@id/visitedCity" />
+    </fragment>
+    <fragment
+        android:id="@+id/visitedCity"
+        android:name="com.example.turkey.views.VisitedCity"
+        android:label="fragment_visited_city"
+        tools:layout="@layout/fragment_visited_city" >
+        <action
+            android:id="@+id/action_visitedCity_to_wantCity2"
+            app:destination="@id/wantCity" />
+        <action
+            android:id="@+id/action_visitedCity_to_cityDetail"
+            app:destination="@id/cityDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/wantCity"
+        android:name="com.example.turkey.views.WantCity"
+        android:label="fragment_want_city"
+        tools:layout="@layout/fragment_want_city" >
+        <action
+            android:id="@+id/action_wantCity_to_cityName"
+            app:destination="@id/cityName" />
+        <action
+            android:id="@+id/action_wantCity_to_visitedCity"
+            app:destination="@id/visitedCity" />
+        <action
+            android:id="@+id/action_wantCity_to_cityDetail"
+            app:destination="@id/cityDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot"
+        android:name="com.example.turkey.views.ChatBot"
+        android:label="fragment_chatbot"
+        tools:layout="@layout/fragment_chatbot" />
+</navigation>
