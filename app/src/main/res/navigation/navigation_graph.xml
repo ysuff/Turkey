@@ -11,27 +11,27 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_login_to_singup"
-            app:destination="@id/singup" />
-        <action
             android:id="@+id/action_login_to_homeActivity"
             app:destination="@id/homeActivity" />
-    </fragment>
-    <fragment
-        android:id="@+id/singup"
-        android:name="com.example.turkey.views.singup"
-        android:label="fragment_singup"
-        tools:layout="@layout/fragment_singup" >
         <action
-            android:id="@+id/action_singup_to_login"
-            app:destination="@id/login" />
-        <action
-            android:id="@+id/action_singup_to_homeActivity"
-            app:destination="@id/homeActivity" />
+            android:id="@+id/action_login_to_singUp"
+            app:destination="@id/singUp" />
     </fragment>
     <activity
         android:id="@+id/homeActivity"
         android:name="com.example.turkey.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/singUp"
+        android:name="com.example.turkey.views.SingUp"
+        android:label="fragment_singup"
+        tools:layout="@layout/fragment_singup" >
+        <action
+            android:id="@+id/action_singUp_to_homeActivity"
+            app:destination="@id/homeActivity" />
+        <action
+            android:id="@+id/action_singUp_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>

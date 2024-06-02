@@ -20,12 +20,12 @@ private lateinit var singupAuth: FirebaseAuth
 private lateinit var singupNavController: NavController
 
 private lateinit var singupEmailEditText: EditText
-private lateinit var singupGoBackToLoginButton: Button
+private lateinit var singUpGoBackToLoginButton: Button
 private lateinit var singupSingupButton: Button
 private lateinit var singupPasswordEditText: EditText
 private lateinit var singupPasswordControlEditText: EditText
 
-class singup : Fragment() {
+class SingUp : Fragment() {
 
 
 
@@ -35,7 +35,7 @@ class singup : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSingupBinding.inflate(inflater, container, false)
-        singupGoBackToLoginButton = binding.singupGoBackToLoginButton
+        singUpGoBackToLoginButton = binding.singUpGoBackToLoginButton
         singupSingupButton = binding.singupSingupButton
         singupEmailEditText = binding.singupEmailEditText
         singupPasswordEditText = binding.singupPasswordEditText
@@ -46,8 +46,8 @@ class singup : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        singupGoBackToLoginButton.setOnClickListener {
-            val goLoginPage = singupDirections.actionSingupToLogin()
+        singUpGoBackToLoginButton.setOnClickListener {
+            val goLoginPage = SingUpDirections.actionSingUpToLogin()
             Navigation.findNavController(it).navigate(goLoginPage)
         }
 
@@ -74,10 +74,9 @@ class singup : Fragment() {
                         OnCompleteListener {
                             if (it.isSuccessful) {
                                 Toast.makeText(context,"Kayıt Başarıyla Oluşturuldu",Toast.LENGTH_SHORT).show()
-                                singupNavController.navigate(R.id.action_home_to_city)
+                                singupNavController.navigate(R.id.action_login_to_homeActivity)
                             } else {
-                                Toast.makeText(
-                                    context,it.exception?.message,Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context,it.exception?.message,Toast.LENGTH_SHORT).show()
                             }
                         }
                     )

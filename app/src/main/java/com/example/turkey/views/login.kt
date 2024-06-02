@@ -47,7 +47,7 @@ class login : Fragment() {
         rememberBox = binding.rememberBox
 
         loginGoSingupButton.setOnClickListener {
-            val goSingupPage = R.id.action_login_to_singup
+            val goSingupPage = R.id.action_login_to_singUp
             it.findNavController().navigate(goSingupPage)
         }
 
