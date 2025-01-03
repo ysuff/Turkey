@@ -66,7 +66,6 @@ class login : Fragment() {
             loginPswdEditText.setText(sharedPreferences.getString("password", ""))
         }
     }
-
     private fun loginEvent() {
         loginLoginButton.setOnClickListener {
             val loginEmail = loginMailEditText.text.toString()

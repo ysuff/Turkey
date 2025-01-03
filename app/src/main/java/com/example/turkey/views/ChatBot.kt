@@ -52,13 +52,12 @@ class ChatBot : Fragment() {
     }
 
     private fun getResponse(question: String, callback: (String) -> Unit) {
-        val apiKey = "sk-proj-JehaHf2i0kUyymMyqdT1T3BlbkFJVlElPJ0lMKGP0w5VjgLR"
         val url = "https://api.openai.com/v1/chat/completions"
         val requestBody = """
             {
               "model": "gpt-3.5-turbo",
               "messages": [{"role": "user", "content": "$question"}],
-              "max_tokens": 150,
+              "max_tokens": 200,
               "temperature": 0.7
             }
         """.trimIndent()

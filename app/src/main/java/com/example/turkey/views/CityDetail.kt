@@ -2,6 +2,8 @@ package com.example.turkey.views
 
 import android.graphics.Color
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -83,10 +85,10 @@ class CityDetail : Fragment() {
         cityVisit = arguments?.getString("cityVisit", "")
         cityFood = arguments?.getString("cityFood", "")
 
+        binding.textViewVisitPlaces.movementMethod=LinkMovementMethod.getInstance()
         binding.textViewCityName.text = cityName
-        binding.textViewVisitPlaces.text = cityVisit
+        binding.textViewVisitPlaces.text = Html.fromHtml(cityVisit?.replace("\n","<br>"))
         binding.textViewFamousFoods.text = cityFood
-
         cityImage?.let {
             val drawableId = resources.getIdentifier(it, "drawable", requireContext().packageName)
             Glide.with(this)

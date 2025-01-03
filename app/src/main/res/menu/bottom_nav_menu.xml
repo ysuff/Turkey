@@ -5,29 +5,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
-    <item
-        android:id="@+id/mainActivityTwo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/ic_map"
-        android:title="Map" />
+        android:title="Ana Ekran" />
+
     <item
         android:id="@+id/cityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_city"
-        android:title="Cities" />
+        android:title="Şehirler" />
+
     <item
-        android:id="@+id/wantCity"
+        android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/visit"
-        android:title="Want" />
-    <item
-        android:id="@+id/visitedCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/check"
-        android:title="Visited" />
+        android:icon="@drawable/ic_profile"
+        android:title="Profil" />
 </menu>

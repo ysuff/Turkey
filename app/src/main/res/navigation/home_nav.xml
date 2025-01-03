@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_home_to_chatBot"
             app:destination="@id/chatBot" />
+        <action
+            android:id="@+id/action_home_to_profile"
+            app:destination="@id/profile" />
     </fragment>
     <activity
         android:id="@+id/mainActivityTwo"
@@ -67,6 +70,9 @@
         <action
             android:id="@+id/action_visitedCity_to_cityDetail"
             app:destination="@id/cityDetail" />
+        <action
+            android:id="@+id/action_visitedCity_to_profile"
+            app:destination="@id/profile" />
     </fragment>
     <fragment
         android:id="@+id/wantCity"
@@ -82,10 +88,53 @@
         <action
             android:id="@+id/action_wantCity_to_cityDetail"
             app:destination="@id/cityDetail" />
+        <action
+            android:id="@+id/action_wantCity_to_profile"
+            app:destination="@id/profile" />
     </fragment>
     <fragment
         android:id="@+id/chatBot"
         android:name="com.example.turkey.views.ChatBot"
         android:label="fragment_chatbot"
-        tools:layout="@layout/fragment_chatbot" />
+        tools:layout="@layout/fragment_chatbot" >
+        <action
+            android:id="@+id/action_chatBot_self"
+            app:destination="@id/chatBot" />
+        <action
+            android:id="@+id/action_chatBot_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.turkey.views.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_profile_to_mainActivityTwo"
+            app:destination="@id/mainActivityTwo" />
+        <action
+            android:id="@+id/action_profile_to_chatBot"
+            app:destination="@id/chatBot" />
+        <action
+            android:id="@+id/action_profile_to_visitedCity"
+            app:destination="@id/visitedCity" />
+        <action
+            android:id="@+id/action_profile_to_wantCity"
+            app:destination="@id/wantCity" />
+        <action
+            android:id="@+id/action_profile_to_cityCalculate"
+            app:destination="@id/cityCalculate" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityCalculate"
+        android:name="com.example.turkey.views.adapters.CityCalculate"
+        android:label="fragment_city_calculate"
+        tools:layout="@layout/fragment_city_calculate" >
+        <action
+            android:id="@+id/action_cityCalculate_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
 </navigation>

@@ -34,6 +34,7 @@ class CityName : Fragment() {
         val cityVisit = getCityVisit()
         val cityFood = getCityFood()
 
+
         adapter = CityRawAdapter(cityName, getCityImage, cityVisit, cityFood)
         recyclerView.adapter = adapter
 
@@ -160,24 +161,26 @@ class CityName : Fragment() {
         return sehirAdlari
     }
 
+
     private fun getCityVisit(): ArrayList<String> {
+
         val visitPalace = ArrayList<String>()
         visitPalace.add(
-        "Adana, Türkiye'nin güneyinde, Akdeniz Bölgesi'nde yer alan ve tarihi, kültürel ve gastronomik zenginlikleriyle öne çıkan bir şehirdir. Akdeniz iklimi etkisi altında olan Adana, sıcak yazları ve ılıman kışlarıyla bilinir. Tarım ve sanayi şehri olmasının yanı sıra, tarihi ve doğal güzellikleriyle de dikkat çeker.\n" +
+        "<a href='https://maps.app.goo.gl/FM89T6qFzsbyGbFt8'>Adana </a>:, Türkiye'nin güneyinde, Akdeniz Bölgesi'nde yer alan ve tarihi, kültürel ve gastronomik zenginlikleriyle öne çıkan bir şehirdir. Akdeniz iklimi etkisi altında olan Adana, sıcak yazları ve ılıman kışlarıyla bilinir. Tarım ve sanayi şehri olmasının yanı sıra, tarihi ve doğal güzellikleriyle de dikkat çeker.\n" +
                 "\n" +
                 "Adana'nın gezilecek yerlerinden bazıları şunlardır:\n" +
                 "\n" +
-                "Taşköprü: Seyhan Nehri üzerinde bulunan ve Roma dönemine dayanan tarihi bir köprüdür. Adana'nın sembolü haline gelmiştir ve şehrin panoramik manzarasını görmek için harika bir noktadır.\n" +
+                " <a href='https://maps.app.goo.gl/Q8dgsBoZNnNuKTU79'>Taşköprü </a>: Seyhan Nehri üzerinde bulunan ve Roma dönemine dayanan tarihi bir köprüdür. Adana'nın sembolü haline gelmiştir ve şehrin panoramik manzarasını görmek için harika bir noktadır.\n" +
                 "\n" +
-                "Merkez Park: Şehrin merkezinde yer alan bu park, dinlenmek ve doğayla iç içe vakit geçirmek için ideal bir mekandır. Piknik yapabilir, yürüyüş yapabilir veya gölet etrafında gezinebilirsiniz.\n" +
+                "<a href='https://maps.app.goo.gl/pg1HaSvzUhM8sjcZA'>Merkez Park </a>: Şehrin merkezinde yer alan bu park, dinlenmek ve doğayla iç içe vakit geçirmek için ideal bir mekandır. Piknik yapabilir, yürüyüş yapabilir veya gölet etrafında gezinebilirsiniz.\n" +
                 "\n" +
-                "Sabancı Merkez Camii: Türkiye'nin en büyük camilerinden biridir. Modern mimarisiyle dikkat çeken bu cami, Adana'nın önemli dini ve turistik noktalarından biridir.\n" +
+                "<a href='https://maps.app.goo.gl/gMS3RQPBeuCYDenJ7'>Sabancı Merkez Camii </a>: Türkiye'nin en büyük camilerinden biridir. Modern mimarisiyle dikkat çeken bu cami, Adana'nın önemli dini ve turistik noktalarından biridir.\n" +
                 "\n" +
-                "Adana Arkeoloji Müzesi: Şehrin tarihini ve kültürel mirasını keşfetmek isteyenler için ideal bir yerdir. Birbirinden değerli eserlerin sergilendiği müzede, Hitit, Roma, Bizans ve Osmanlı dönemlerine ait eserler bulunmaktadır.\n" +
+                "<a href='https://maps.app.goo.gl/jF7ZYJdfPPRpWuhV7'>Adana Arkeoloji Müzesi </a>: Şehrin tarihini ve kültürel mirasını keşfetmek isteyenler için ideal bir yerdir. Birbirinden değerli eserlerin sergilendiği müzede, Hitit, Roma, Bizans ve Osmanlı dönemlerine ait eserler bulunmaktadır.\n" +
                 "\n" +
-                "Adana Ulu Camii ve Ramazanoğulları Külliyesi: Osmanlı dönemi mimarisinin güzel bir örneği olan bu kompleks, tarihi ve mimari açıdan önemli bir yapıdır. Ulu Camii'nin yanı sıra medrese, türbe ve çeşmeler de bu komplekste yer alır.\n" +
+                "<a href='https://maps.app.goo.gl/f1BGrEfJ68CCmqzv7'>Adana Ulu Camii ve Ramazanoğulları Külliyesi </a>: Osmanlı dönemi mimarisinin güzel bir örneği olan bu kompleks, tarihi ve mimari açıdan önemli bir yapıdır. Ulu Camii'nin yanı sıra medrese, türbe ve çeşmeler de bu komplekste yer alır.\n" +
                 "\n" +
-                "Varda Köprüsü: Adana'nın tarihi yapılarından biri olan Varda Köprüsü, Misis Köprüsü olarak da bilinir. Roma dönemine ait olan bu köprü, Seyhan Nehri üzerinde yer alır ve etkileyici bir mimariye sahiptir.\n" +
+                "<a href='https://maps.app.goo.gl/cshCgV2RCf3tg8W97'>Varda Köprüsü </a>: Adana'nın tarihi yapılarından biri olan Varda Köprüsü, Misis Köprüsü olarak da bilinir. Roma dönemine ait olan bu köprü, Seyhan Nehri üzerinde yer alır ve etkileyici bir mimariye sahiptir.\n" +
                 "\n" +
                 "Adana Kebapları ve Lezzet Durakları: Adana, Türkiye'nin gastronomi başkentlerinden biridir. Burada mutlaka denemeniz gereken lezzetler arasında Adana kebabı, şırdan, beyran çorbası ve tas kebabı bulunur. Şehrin çeşitli noktalarında yer alan kebapçılar ve restoranlar, bu lezzetleri tadabileceğiniz yerlerdir."
         )
@@ -327,6 +330,3 @@ class CityName : Fragment() {
     }
 
 }
-/*
-
- */

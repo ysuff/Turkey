@@ -1,64 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F5F5"
     tools:context=".views.Home">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+    <!-- ViewPager -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="400dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonBack"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@color/blue"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toStartOf="@id/viewPager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/viewPager"
-        app:layout_constraintBottom_toBottomOf="@id/viewPager" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+    </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/buttonNext"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/viewPager"
-        app:layout_constraintTop_toTopOf="@id/viewPager"
-        app:layout_constraintBottom_toBottomOf="@id/viewPager" />
-
-    <TextView
-        android:id="@+id/textView"
+    <!-- TabLayout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginHorizontal="10dp"
-        android:text="Türkiye, köprü konumuyla hem Asya hem de Avrupa kıtalarına uzanan coğrafi yapısıyla dikkat çeker. Zengin tarihi ve kültürel mirası, benzersiz doğal güzellikleri ve çeşitli iklim özellikleriyle ünlüdür. İstanbul'un tarihi yarımadası, Kapadokya'nın peri bacaları, Pamukkale'nin termal suları gibi birçok turistik cazibe merkezi bulunur. Türkiye, geleneksel lezzetli mutfağıyla da tanınır ve ziyaretçilere zengin bir gastronomik deneyim sunar."
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        android:textSize="15sp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/blue"
+        app:tabSelectedTextColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewPager" />
+        app:tabMode="fixed"
+        app:tabIndicatorHeight="4dp"
+        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:text="git"
-        android:id="@+id/buttonChat"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:lineSpacingExtra="4dp"
+                android:padding="16dp"
+                android:text="Türkiye, köprü konumuyla hem Asya hem de Avrupa kıtalarına uzanan coğrafi yapısıyla dikkat çeker. Zengin tarihi ve kültürel mirası, benzersiz doğal güzellikleri ve çeşitli iklim özellikleriyle ünlüdür. İstanbul'un tarihi yarımadası, Kapadokya'nın peri bacaları, Pamukkale'nin termal suları gibi birçok turistik cazibe merkezi bulunur. Türkiye, geleneksel lezzetli mutfağıyla da tanınır ve ziyaretçilere zengin bir gastronomik deneyim sunar."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

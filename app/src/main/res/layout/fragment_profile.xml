@@ -3,72 +3,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.Profile">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Profile Image and Info -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:padding="16dp">
 
-            <ImageView
+
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:background="@drawable/login_background"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/profile_picture_desc"
+                android:src="@drawable/yufidi"
+                app:shapeAppearanceOverlay="@style/RoundImage" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:text="Yusuf ANDİÇ"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="kılıç"
-                    android:textSize="18sp"/>
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Buttons Section -->
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:padding="16dp">
 
-            <Button
-                android:text="Chatbot"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"/>
-            <Button
-                android:text="Chatbot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"/>
-            <Button
-                android:text="Chatbot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:id="@+id/buttonChatBot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/button_background"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <Button
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_right"
+                        app:iconTint="@color/black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chatbot"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/buttonMaps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/button_background"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <Button
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_right"
+                        app:iconTint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Map"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/buttonVisitedCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/button_background"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <Button
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_right"
+                        app:iconTint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gidilen Şehirler"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/buttonWantedCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/button_background"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <Button
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_right"
+                        app:iconTint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gitmek İstenen Şehirler"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
     </LinearLayout>
+
 </FrameLayout>

@@ -14,12 +14,12 @@ import com.example.turkey.views.WantCityDirections
 class WantCityAdapter(private val wantCityDataSet: ArrayList<CityEntity>) : RecyclerView.Adapter<WantCityAdapter.CityWantHolder>() {
 
     class CityWantHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val cityNameText: TextView = itemView.findViewById(R.id.cityNameRawTextView)
+        val cityNameText: TextView = itemView.findViewById(R.id.itemWantedTextView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityWantHolder {
         return CityWantHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.city_name_raw, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.wanted_item, parent, false)
         )
     }
 

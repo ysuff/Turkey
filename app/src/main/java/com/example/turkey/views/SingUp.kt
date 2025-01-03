@@ -47,8 +47,7 @@ class SingUp : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         singUpGoBackToLoginButton.setOnClickListener {
-            val goLoginPage = SingUpDirections.actionSingUpToLogin()
-            Navigation.findNavController(it).navigate(goLoginPage)
+            singupNavController.navigate(R.id.action_singUp_to_login)
         }
 
         singupInit(view)
@@ -74,7 +73,7 @@ class SingUp : Fragment() {
                         OnCompleteListener {
                             if (it.isSuccessful) {
                                 Toast.makeText(context,"Kayıt Başarıyla Oluşturuldu",Toast.LENGTH_SHORT).show()
-                                singupNavController.navigate(R.id.action_login_to_homeActivity)
+                                singupNavController.navigate(R.id.action_singUp_to_homeActivity)
                             } else {
                                 Toast.makeText(context,it.exception?.message,Toast.LENGTH_SHORT).show()
                             }

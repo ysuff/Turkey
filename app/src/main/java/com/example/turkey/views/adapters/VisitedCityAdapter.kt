@@ -15,11 +15,11 @@ class VisitedCityAdapter(private val visitedCityDataSet: ArrayList<DatabaseFireb
     RecyclerView.Adapter<VisitedCityAdapter.CityViewHolder>() {
 
     class CityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val visitCityName: TextView = itemView.findViewById(R.id.cityNameRawTextView)
+        val visitCityName: TextView = itemView.findViewById(R.id.itemVisitedTextVew)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.city_name_raw, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.visited_item, parent, false)
         return CityViewHolder(view)
     }
 
