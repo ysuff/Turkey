@@ -1,0 +1,16 @@
+<resources>
+
+
+    <style name="CustomTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabIndicator">@drawable/tab_indicator_selected</item>
+        <item name="tabSelectedTextColor">@color/blue</item>
+        <item name="tabTextColor">@color/grey</item>
+        <item name="tabIndicatorGravity">center</item>
+        <item name="tabBackground">@drawable/tab_indicator_unselected</item>
+        <item name="tabRippleColor">@null</item>
+    </style>
+    <style name="RoundImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>
